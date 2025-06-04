@@ -12,6 +12,7 @@ Sistema inteligente de generación de componentes del Design System de Bancolomb
 - **🌲 Base de Datos Vectorial**: Pinecone y ChromaDB para escalabilidad
 - **📱 Responsive Design**: Optimizado para desktop, tablet y móvil
 - **⚡ Alto Rendimiento**: 93% precisión, 150ms tiempo de respuesta
+- **🤖 IA Avanzada**: fine-tuning, aprendizaje de contexto y autocompletado
 
 ## 🏗️ Arquitectura del Sistema
 
@@ -243,6 +244,9 @@ GET /api/v2/components/bc-button/similar?limit=5
 # Test completo de la API
 npm test
 
+# Test completo con servidor automático
+npm run test-api-server
+
 # Test de componentes específicos
 npm run test-new
 
@@ -322,17 +326,18 @@ RATE_LIMIT_MAX_REQUESTS=1000
 LOG_LEVEL=warn
 ```
 
-### Docker (Opcional)
+### Docker
 
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY . .
-EXPOSE 3000
-CMD ["npm", "start"]
+El repositorio incluye un `Dockerfile` listo para construir una imagen
+contenedor. Para crearla y ejecutar el servicio:
+
+```bash
+docker build -t bc-generator .
+docker run -p 3000:3000 bc-generator
 ```
+
+El `Dockerfile` utiliza Node.js 18 y realiza la instalación de dependencias en
+modo producción para optimizar el tamaño de la imagen.
 
 ## 📈 Rendimiento
 
@@ -376,7 +381,8 @@ RAGMCP/
 1. **Agregar datos del componente** en `src/data/components/`
 2. **Generar embeddings** con `npm run analyze`
 3. **Actualizar índice vectorial**
-4. **Probar** con `npm test`
+4. **Probar** con `npm run test-api-server`
+5. **Pruebas de IA** con `npm run test-ai`
 
 ### Contribuir
 
