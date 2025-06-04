@@ -1,0 +1,102 @@
+{
+  "name": "bc-input",
+  "description": "Directiva de entrada de texto con los diseños de Bancolombia",
+  "category": "atoms",
+  "type": "directive",
+  "module": "BcInputModule",
+  "import": "@bancolombia/design-system-web/bc-input",
+  "service": null,
+  "properties": {
+    "componentId": {
+      "type": "string",
+      "required": false,
+      "description": "Identificador único del elemento input",
+      "default": "input-{timestamp}"
+    },
+    "type": {
+      "type": "string",
+      "required": false,
+      "description": "Tipo de entrada HTML",
+      "enum": ["text", "password", "email", "number", "tel", "url"],
+      "default": "text"
+    },
+    "placeholder": {
+      "type": "string",
+      "required": false,
+      "description": "Texto de ayuda mostrado cuando el campo está vacío"
+    },
+    "disabled": {
+      "type": "boolean",
+      "required": false,
+      "description": "Si el campo está deshabilitado",
+      "default": false
+    },
+    "required": {
+      "type": "boolean",
+      "required": false,
+      "description": "Si el campo es obligatorio",
+      "default": false
+    },
+    "maxlength": {
+      "type": "number",
+      "required": false,
+      "description": "Número máximo de caracteres permitidos"
+    },
+    "value": {
+      "type": "string",
+      "required": false,
+      "description": "Valor inicial del input"
+    }
+  },
+  "prompts": [
+    "campo de texto",
+    "input",
+    "entrada",
+    "formulario",
+    "campo de entrada",
+    "caja de texto",
+    "campo obligatorio",
+    "campo de contraseña",
+    "campo de email",
+    "campo numérico",
+    "directiva input"
+  ],
+  "examples": [
+    {
+      "name": "Input básico",
+      "description": "Campo de texto simple con directiva",
+      "properties": {
+        "type": "text",
+        "placeholder": "Ingresa tu nombre"
+      }
+    },
+    {
+      "name": "Input de contraseña",
+      "description": "Campo para contraseña",
+      "properties": {
+        "type": "password",
+        "placeholder": "Ingresa tu contraseña",
+        "required": true
+      }
+    },
+    {
+      "name": "Input de email",
+      "description": "Campo para correo electrónico",
+      "properties": {
+        "type": "email",
+        "placeholder": "ejemplo@bancolombia.com.co",
+        "required": true
+      }
+    },
+    {
+      "name": "Input deshabilitado",
+      "description": "Campo deshabilitado",
+      "properties": {
+        "type": "text",
+        "placeholder": "Campo deshabilitado",
+        "disabled": true,
+        "value": "Valor predeterminado"
+      }
+    }
+  ]
+} 

@@ -1,0 +1,248 @@
+# ==========================================
+# BANCOLOMBIA COMPONENT GENERATOR - GITIGNORE
+# ==========================================
+
+# ==========================================
+# DEPENDENCIAS Y PAQUETES
+# ==========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ==========================================
+# ARCHIVOS DE ENTORNO Y CONFIGURACIÓN
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+config.json
+secrets.json
+
+# ==========================================
+# LOGS Y ARCHIVOS DE DEPURACIÓN
+# ==========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+.eslintcache
+*.tsbuildinfo
+
+# ==========================================
+# ARCHIVOS TEMPORALES Y CACHE
+# ==========================================
+.cache/
+.tmp/
+.temp/
+tmp/
+temp/
+*.tmp
+*.temp
+.nyc_output
+coverage/
+lib-cov/
+
+# ==========================================
+# BASES DE DATOS Y ALMACENAMIENTO
+# ==========================================
+*.db
+*.sqlite
+*.sqlite3
+data/
+db/
+database/
+*.dump
+*.sql.gz
+
+# ==========================================
+# ARCHIVOS DE IA Y VECTORES
+# ==========================================
+# Embeddings y vectores generados
+embeddings/
+vectors/
+*.vec
+*.embedding
+*.pkl
+*.pickle
+
+# Modelos de IA descargados
+models/
+*.model
+*.bin
+*.safetensors
+
+# Cache de APIs de IA
+.openai_cache/
+.cohere_cache/
+.pinecone_cache/
+.chroma_cache/
+
+# ==========================================
+# ARCHIVOS DEL SISTEMA OPERATIVO
+# ==========================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ==========================================
+# EDITORES E IDEs
+# ==========================================
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*.swn
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ==========================================
+# ARCHIVOS DE BUILD Y DISTRIBUCIÓN
+# ==========================================
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist/
+.serverless/
+.fusebox/
+
+# ==========================================
+# ARCHIVOS DE PRUEBAS Y COBERTURA
+# ==========================================
+coverage/
+.nyc_output/
+.coverage/
+*.lcov
+test-results/
+test-reports/
+junit.xml
+
+# ==========================================
+# ARCHIVOS DE DOCUMENTACIÓN GENERADOS
+# ==========================================
+docs/generated/
+api-docs/
+*.pdf
+*.docx
+
+# ==========================================
+# ARCHIVOS DE BACKUP Y VERSIONES
+# ==========================================
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*~
+.#*
+
+# ==========================================
+# ARCHIVOS ESPECÍFICOS DEL PROYECTO
+# ==========================================
+# Archivos de componentes generados temporalmente
+generated-components/
+temp-components/
+
+# Archivos de análisis y reportes
+analysis-reports/
+component-analysis-*.json
+performance-reports/
+
+# Archivos de configuración local del desarrollador
+local-config.json
+dev-settings.json
+git-profile.sh
+
+# Librerías del Sistema de Diseño de Bancolombia (archivos compilados)
+# Ignorar toda la carpeta bancolombia (librerías externas)
+bancolombia/
+
+# ==========================================
+# ARCHIVOS DE SEGURIDAD
+# ==========================================
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+private/
+secrets/
+
+# ==========================================
+# OTROS ARCHIVOS COMUNES
+# ==========================================
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.dmg
+*.iso
+*.exe
+*.deb
+*.rpm
+
+# Archivos de lock opcionales (descomenta si no quieres versionarlos)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

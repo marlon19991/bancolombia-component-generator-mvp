@@ -1,0 +1,10 @@
+<button 
+  bc-button
+  typeButton="{{typeButton}}"
+  {{#if sizeButton}}sizeButton="{{sizeButton}}"{{/if}}
+  {{#if width}}width="{{width}}"{{/if}}
+  {{#if disabled}}disabled{{/if}}
+  type="button"
+  {{#if clickHandler}}(click)="{{clickHandler}}()"{{/if}}>
+  {{buttonText}}
+</button> 

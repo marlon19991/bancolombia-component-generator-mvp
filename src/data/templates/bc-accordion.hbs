@@ -1,0 +1,19 @@
+<bc-accordions-group 
+  {{#if single}}[single]="{{single}}"{{/if}}
+  (select)="{{selectHandler}}($event)">
+  <bc-accordion 
+    {{#if type}}type="{{type}}"{{/if}}
+    {{#if active}}[active]="{{active}}"{{/if}}
+    {{#if disabled}}[disabled]="{{disabled}}"{{/if}}>
+    <bc-accordion-header
+      title="{{title}}"
+      {{#if subtitle}}subtitle="{{subtitle}}"{{/if}}
+      {{#if leftIcon}}leftIcon="{{leftIcon}}"{{/if}}
+      {{#if titleIcon}}titleIcon="{{titleIcon}}"{{/if}}
+      {{#if subtitleIcon}}subtitleIcon="{{subtitleIcon}}"{{/if}}>
+    </bc-accordion-header>
+    <bc-accordion-content>
+      {{content}}
+    </bc-accordion-content>
+  </bc-accordion>
+</bc-accordions-group> 

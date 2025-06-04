@@ -1,0 +1,89 @@
+{
+  "name": "bc-button",
+  "type": "directive",
+  "category": "atom",
+  "description": "Directiva de botones con los diseños de Bancolombia S.A.",
+  "selector": "[bc-button]",
+  "module": "BcButtonModule",
+  "import": "@bancolombia/design-system-web/bc-button",
+  "properties": {
+    "typeButton": {
+      "type": "string",
+      "required": true,
+      "default": "primary",
+      "options": ["primary", "secondary", "terciary", "tertiary", "background", "ghost"],
+      "description": "Tipo de botón que define el estilo visual"
+    },
+    "sizeButton": {
+      "type": "string",
+      "required": false,
+      "default": "default",
+      "options": ["default", "small", "puffy"],
+      "description": "Tamaño del botón"
+    },
+    "width": {
+      "type": "string",
+      "required": false,
+      "options": ["fill", "hug"],
+      "description": "Configuración de ancho del botón"
+    },
+    "class": {
+      "type": "string",
+      "required": false,
+      "description": "Clases CSS adicionales"
+    }
+  },
+  "usage": {
+    "html": "<button bc-button typeButton=\"{{typeButton}}\" sizeButton=\"{{sizeButton}}\" {{#if width}}width=\"{{width}}\"{{/if}}>{{buttonText}}</button>",
+    "typescript": "// No requiere código TypeScript adicional para uso básico"
+  },
+  "examples": [
+    {
+      "name": "Botón primario básico",
+      "description": "Botón principal para acciones primarias",
+      "code": "<button bc-button typeButton=\"primary\">Aceptar</button>",
+      "props": {
+        "typeButton": "primary",
+        "buttonText": "Aceptar"
+      }
+    },
+    {
+      "name": "Botón secundario pequeño",
+      "description": "Botón secundario de tamaño reducido",
+      "code": "<button bc-button typeButton=\"secondary\" sizeButton=\"small\">Cancelar</button>",
+      "props": {
+        "typeButton": "secondary",
+        "sizeButton": "small",
+        "buttonText": "Cancelar"
+      }
+    },
+    {
+      "name": "Botón ancho completo",
+      "description": "Botón que ocupa todo el ancho disponible",
+      "code": "<button bc-button typeButton=\"primary\" width=\"fill\">Continuar</button>",
+      "props": {
+        "typeButton": "primary",
+        "width": "fill",
+        "buttonText": "Continuar"
+      }
+    }
+  ],
+  "prompts": [
+    "botón primario",
+    "botón principal",
+    "botón de aceptar",
+    "botón secundario",
+    "botón de cancelar",
+    "botón pequeño",
+    "botón grande",
+    "botón ancho completo",
+    "botón que ocupe todo el ancho"
+  ],
+  "interactions": [
+    {
+      "event": "click",
+      "description": "Evento de clic del botón",
+      "handler": "(click)=\"{{clickHandler}}()\""
+    }
+  ]
+} 

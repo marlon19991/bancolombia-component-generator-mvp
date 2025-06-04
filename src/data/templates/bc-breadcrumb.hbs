@@ -1,0 +1,8 @@
+<bc-breadcrumb
+  componentId="{{componentId}}"
+  [items]="{{itemsArray}}"
+  {{#if separator}}[separator]="'{{separator}}'"{{/if}}
+  {{#if maxItems}}[maxItems]="{{maxItems}}"{{/if}}
+  {{#if showHome}}[showHome]="{{showHome}}"{{/if}}
+  (itemClick)="{{clickHandler}}($event)">
+</bc-breadcrumb> 

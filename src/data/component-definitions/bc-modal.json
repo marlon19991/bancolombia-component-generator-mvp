@@ -1,0 +1,128 @@
+{
+  "name": "bc-modal",
+  "description": "Componente de ventana modal para mostrar contenido superpuesto con los diseños de Bancolombia",
+  "category": "organisms",
+  "type": "component",
+  "module": "BcModalComponent",
+  "import": "@bancolombia/design-system-web/bc-modal",
+  "service": "BcDialogService",
+  "properties": {
+    "componentId": {
+      "type": "string",
+      "required": true,
+      "description": "Identificador único del componente",
+      "default": "modal-{timestamp}"
+    },
+    "title": {
+      "type": "string",
+      "required": false,
+      "description": "Título del modal"
+    },
+    "content": {
+      "type": "string",
+      "required": false,
+      "description": "Contenido principal del modal"
+    },
+    "size": {
+      "type": "string",
+      "required": false,
+      "description": "Tamaño del modal",
+      "enum": ["small", "medium", "large", "fullscreen"],
+      "default": "medium"
+    },
+    "closable": {
+      "type": "boolean",
+      "required": false,
+      "description": "Si el modal se puede cerrar",
+      "default": true
+    },
+    "backdrop": {
+      "type": "boolean",
+      "required": false,
+      "description": "Si muestra el fondo oscuro",
+      "default": true
+    },
+    "primaryAction": {
+      "type": "string",
+      "required": false,
+      "description": "Texto del botón de acción principal"
+    },
+    "secondaryAction": {
+      "type": "string",
+      "required": false,
+      "description": "Texto del botón de acción secundaria"
+    },
+    "type": {
+      "type": "string",
+      "required": false,
+      "description": "Tipo de modal",
+      "enum": ["info", "warning", "error", "success", "confirmation"],
+      "default": "info"
+    },
+    "icon": {
+      "type": "string",
+      "required": false,
+      "description": "Icono del modal"
+    }
+  },
+  "prompts": [
+    "modal",
+    "ventana modal",
+    "popup",
+    "diálogo",
+    "ventana emergente",
+    "overlay",
+    "confirmación",
+    "ventana de confirmación",
+    "modal de información",
+    "modal de error"
+  ],
+  "examples": [
+    {
+      "name": "Modal básico",
+      "description": "Modal simple con título y contenido",
+      "properties": {
+        "componentId": "modal-basic",
+        "title": "Información",
+        "content": "Este es un modal básico con información importante",
+        "primaryAction": "Aceptar"
+      }
+    },
+    {
+      "name": "Modal de confirmación",
+      "description": "Modal para confirmar una acción",
+      "properties": {
+        "componentId": "modal-confirmation",
+        "title": "Confirmar acción",
+        "content": "¿Estás seguro de que deseas continuar con esta operación?",
+        "type": "confirmation",
+        "primaryAction": "Confirmar",
+        "secondaryAction": "Cancelar"
+      }
+    },
+    {
+      "name": "Modal de error",
+      "description": "Modal para mostrar errores",
+      "properties": {
+        "componentId": "modal-error",
+        "title": "Error en la operación",
+        "content": "Ha ocurrido un error inesperado. Por favor intenta nuevamente.",
+        "type": "error",
+        "primaryAction": "Reintentar",
+        "secondaryAction": "Cancelar"
+      }
+    },
+    {
+      "name": "Modal grande",
+      "description": "Modal de tamaño grande",
+      "properties": {
+        "componentId": "modal-large",
+        "title": "Términos y Condiciones",
+        "content": "Aquí van los términos y condiciones completos del servicio...",
+        "size": "large",
+        "primaryAction": "Acepto",
+        "secondaryAction": "Rechazar"
+      }
+    }
+  ]
+} 

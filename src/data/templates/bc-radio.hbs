@@ -1,0 +1,10 @@
+<bc-radio-group (onChange)="{{changeHandler}}($event)">
+  <bc-radio 
+    {{#if id}}id="{{id}}"{{/if}}
+    name="{{name}}"
+    value="{{value}}"
+    {{#if enabled}}enabled="{{enabled}}"{{/if}}
+    {{#if checked}}checked="{{checked}}"{{/if}}>
+    {{label}}
+  </bc-radio>
+</bc-radio-group> 

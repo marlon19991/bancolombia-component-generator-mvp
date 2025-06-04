@@ -1,0 +1,85 @@
+{
+  "name": "bc-radio",
+  "description": "Componente de radio buttons con los diseños de Bancolombia para selección única",
+  "category": "atoms",
+  "type": "component",
+  "module": "BcRadioModule",
+  "import": "@bancolombia/design-system-web/bc-radio",
+  "service": null,
+  "properties": {
+    "id": {
+      "type": "string",
+      "required": false,
+      "description": "Identificador único del elemento radio",
+      "default": "auto-generated"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "Nombre del grupo de radio buttons"
+    },
+    "value": {
+      "type": "string",
+      "required": true,
+      "description": "Valor del elemento radio"
+    },
+    "enabled": {
+      "type": "boolean",
+      "required": false,
+      "description": "Indica si el elemento está habilitado",
+      "default": true
+    },
+    "checked": {
+      "type": "boolean",
+      "required": false,
+      "description": "Indica si el elemento está seleccionado",
+      "default": false
+    },
+    "label": {
+      "type": "string",
+      "required": true,
+      "description": "Texto del label del radio button"
+    }
+  },
+  "prompts": [
+    "radio",
+    "radio button",
+    "opción única",
+    "selección única",
+    "botón de radio",
+    "grupo de opciones",
+    "seleccionar uno",
+    "opción exclusiva"
+  ],
+  "examples": [
+    {
+      "name": "Radio básico",
+      "description": "Radio button simple",
+      "properties": {
+        "name": "option",
+        "value": "1",
+        "label": "Opción 1"
+      }
+    },
+    {
+      "name": "Radio seleccionado",
+      "description": "Radio button preseleccionado",
+      "properties": {
+        "name": "option",
+        "value": "2",
+        "label": "Opción 2",
+        "checked": true
+      }
+    },
+    {
+      "name": "Radio deshabilitado",
+      "description": "Radio button deshabilitado",
+      "properties": {
+        "name": "option",
+        "value": "3",
+        "label": "Opción 3",
+        "enabled": false
+      }
+    }
+  ]
+} 

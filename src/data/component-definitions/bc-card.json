@@ -1,0 +1,98 @@
+{
+  "name": "bc-card",
+  "description": "Directiva de tarjeta con los diseños de Bancolombia para mostrar contenido agrupado",
+  "category": "molecules",
+  "type": "directive",
+  "module": "BcCardModule",
+  "import": "@bancolombia/design-system-web/bc-card",
+  "service": null,
+  "properties": {
+    "type": {
+      "type": "string",
+      "required": false,
+      "description": "Tipo de card que define su apariencia",
+      "enum": ["default", "image", "rounded", "rounded-header", "rounded-horizontal", "rounded-header-horizontal", "horizontal", "header-horizontal", "header"],
+      "default": "default"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "required": false,
+      "description": "Color de fondo de la card",
+      "enum": ["default", "warning", "info", "error", "success"],
+      "default": "default"
+    },
+    "class": {
+      "type": "string",
+      "required": false,
+      "description": "Clases CSS adicionales para personalizar la card"
+    }
+  },
+  "prompts": [
+    "tarjeta",
+    "card",
+    "contenedor",
+    "caja",
+    "panel",
+    "card redondeada",
+    "tarjeta con header",
+    "card horizontal",
+    "contenedor de información",
+    "card de error",
+    "card de éxito",
+    "card de advertencia"
+  ],
+  "examples": [
+    {
+      "name": "Card básica",
+      "description": "Tarjeta simple con contenido",
+      "properties": {
+        "type": "default"
+      }
+    },
+    {
+      "name": "Card redondeada",
+      "description": "Tarjeta con bordes redondeados",
+      "properties": {
+        "type": "rounded"
+      }
+    },
+    {
+      "name": "Card con header",
+      "description": "Tarjeta con sección de encabezado",
+      "properties": {
+        "type": "header"
+      }
+    },
+    {
+      "name": "Card horizontal",
+      "description": "Tarjeta con disposición horizontal",
+      "properties": {
+        "type": "horizontal"
+      }
+    },
+    {
+      "name": "Card de éxito",
+      "description": "Tarjeta con color de éxito",
+      "properties": {
+        "type": "default",
+        "backgroundColor": "success"
+      }
+    },
+    {
+      "name": "Card de error",
+      "description": "Tarjeta con color de error",
+      "properties": {
+        "type": "default",
+        "backgroundColor": "error"
+      }
+    },
+    {
+      "name": "Card de advertencia",
+      "description": "Tarjeta con color de advertencia",
+      "properties": {
+        "type": "rounded",
+        "backgroundColor": "warning"
+      }
+    }
+  ]
+} 

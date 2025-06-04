@@ -1,0 +1,105 @@
+{
+  "name": "bc-checkbox",
+  "description": "Componente de casilla de verificación con los diseños de Bancolombia",
+  "category": "atoms",
+  "type": "component",
+  "module": "BcCheckboxComponent",
+  "import": "@bancolombia/design-system-web/bc-checkbox",
+  "service": null,
+  "properties": {
+    "componentId": {
+      "type": "string",
+      "required": true,
+      "description": "Identificador único del componente",
+      "default": "checkbox-{timestamp}"
+    },
+    "label": {
+      "type": "string",
+      "required": false,
+      "description": "Etiqueta del checkbox"
+    },
+    "checked": {
+      "type": "boolean",
+      "required": false,
+      "description": "Si el checkbox está marcado",
+      "default": false
+    },
+    "disabled": {
+      "type": "boolean",
+      "required": false,
+      "description": "Si el checkbox está deshabilitado",
+      "default": false
+    },
+    "required": {
+      "type": "boolean",
+      "required": false,
+      "description": "Si el checkbox es obligatorio",
+      "default": false
+    },
+    "indeterminate": {
+      "type": "boolean",
+      "required": false,
+      "description": "Estado indeterminado del checkbox",
+      "default": false
+    },
+    "value": {
+      "type": "string",
+      "required": false,
+      "description": "Valor del checkbox"
+    },
+    "name": {
+      "type": "string",
+      "required": false,
+      "description": "Nombre del campo para formularios"
+    }
+  },
+  "prompts": [
+    "checkbox",
+    "casilla",
+    "casilla de verificación",
+    "check",
+    "marcar",
+    "seleccionar",
+    "opción",
+    "términos y condiciones",
+    "acepto",
+    "confirmo"
+  ],
+  "examples": [
+    {
+      "name": "Checkbox básico",
+      "description": "Casilla de verificación simple",
+      "properties": {
+        "componentId": "checkbox-basic",
+        "label": "Acepto los términos y condiciones"
+      }
+    },
+    {
+      "name": "Checkbox marcado",
+      "description": "Casilla marcada por defecto",
+      "properties": {
+        "componentId": "checkbox-checked",
+        "label": "Recibir notificaciones",
+        "checked": true
+      }
+    },
+    {
+      "name": "Checkbox obligatorio",
+      "description": "Casilla obligatoria",
+      "properties": {
+        "componentId": "checkbox-required",
+        "label": "Acepto las políticas de privacidad",
+        "required": true
+      }
+    },
+    {
+      "name": "Checkbox deshabilitado",
+      "description": "Casilla deshabilitada",
+      "properties": {
+        "componentId": "checkbox-disabled",
+        "label": "Opción no disponible",
+        "disabled": true
+      }
+    }
+  ]
+} 

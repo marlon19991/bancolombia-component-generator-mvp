@@ -1,0 +1,21 @@
+<bc-tabs-group
+  componentId="{{componentId}}"
+  {{#if typeTheme}}[typeTheme]="'{{typeTheme}}'"{{/if}}
+  {{#if orientation}}orientation="{{orientation}}"{{/if}}
+  {{#if selectedIndex}}[selectedIndex]="{{selectedIndex}}"{{/if}}
+  {{#if animation}}[animation]="{{animation}}"{{/if}}
+  {{#if hiddenArrows}}[hiddenArrows]="{{hiddenArrows}}"{{/if}}
+  (changeState)="{{changeHandler}}($event)">
+  {{#each tabs}}
+  <bc-tab 
+    {{#if this.icon}}[labelTemplate]="tab{{@index}}"{{else}}label="{{this.label}}"{{/if}}>
+    {{#if this.icon}}
+    <ng-template #tab{{@index}}>
+      <bc-icon size="sm" aria-hidden="true" aria-label="{{this.label}}">{{this.icon}}</bc-icon>
+      {{this.label}}
+    </ng-template>
+    {{/if}}
+    {{this.content}}
+  </bc-tab>
+  {{/each}}
+</bc-tabs-group> 

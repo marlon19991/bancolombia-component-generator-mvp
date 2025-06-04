@@ -1,0 +1,93 @@
+{
+  "name": "bc-breadcrumb",
+  "description": "Componente de navegación breadcrumb con los diseños de Bancolombia",
+  "category": "molecules",
+  "type": "component",
+  "module": "BcBreadcrumbModule",
+  "import": "@bancolombia/design-system-web/bc-breadcrumb",
+  "service": null,
+  "properties": {
+    "componentId": {
+      "type": "string",
+      "required": true,
+      "description": "Identificador único del componente",
+      "default": "auto-generated"
+    },
+    "items": {
+      "type": "array",
+      "required": true,
+      "description": "Array de elementos del breadcrumb",
+      "items": {
+        "label": "string",
+        "url": "string (opcional)",
+        "active": "boolean (opcional)"
+      }
+    },
+    "separator": {
+      "type": "string",
+      "required": false,
+      "description": "Separador entre elementos",
+      "default": "/"
+    },
+    "maxItems": {
+      "type": "number",
+      "required": false,
+      "description": "Número máximo de elementos a mostrar"
+    },
+    "showHome": {
+      "type": "boolean",
+      "required": false,
+      "description": "Muestra icono de inicio",
+      "default": true
+    }
+  },
+  "prompts": [
+    "breadcrumb",
+    "navegación",
+    "ruta de navegación",
+    "migas de pan",
+    "path",
+    "ubicación",
+    "navegación jerárquica",
+    "ruta actual"
+  ],
+  "examples": [
+    {
+      "name": "Breadcrumb básico",
+      "description": "Navegación simple con 3 niveles",
+      "properties": {
+        "items": [
+          {"label": "Inicio", "url": "/"},
+          {"label": "Productos", "url": "/productos"},
+          {"label": "Cuentas", "active": true}
+        ]
+      }
+    },
+    {
+      "name": "Breadcrumb con separador",
+      "description": "Navegación con separador personalizado",
+      "properties": {
+        "separator": ">",
+        "items": [
+          {"label": "Home", "url": "/"},
+          {"label": "Servicios", "url": "/servicios"},
+          {"label": "Transferencias", "active": true}
+        ]
+      }
+    },
+    {
+      "name": "Breadcrumb limitado",
+      "description": "Navegación con límite de elementos",
+      "properties": {
+        "maxItems": 3,
+        "showHome": false,
+        "items": [
+          {"label": "Nivel 1", "url": "/nivel1"},
+          {"label": "Nivel 2", "url": "/nivel2"},
+          {"label": "Nivel 3", "url": "/nivel3"},
+          {"label": "Actual", "active": true}
+        ]
+      }
+    }
+  ]
+} 

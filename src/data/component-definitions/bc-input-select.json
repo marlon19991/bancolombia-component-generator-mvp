@@ -1,0 +1,110 @@
+{
+  "name": "bc-input-select",
+  "description": "Componente de select con los diseños de Bancolombia para selección de opciones",
+  "category": "molecules",
+  "type": "component",
+  "module": "BcInputSelectModule",
+  "import": "@bancolombia/design-system-web/bc-input-select",
+  "service": null,
+  "properties": {
+    "componentId": {
+      "type": "string",
+      "required": true,
+      "description": "Identificador único del componente",
+      "default": "auto-generated"
+    },
+    "placeholder": {
+      "type": "string",
+      "required": false,
+      "description": "Texto placeholder del select"
+    },
+    "textBelow": {
+      "type": "string",
+      "required": false,
+      "description": "Texto que aparece debajo del select"
+    },
+    "values": {
+      "type": "array",
+      "required": true,
+      "description": "Array de opciones del select",
+      "items": {
+        "text": "string",
+        "value": "string",
+        "icon": "string (opcional)"
+      }
+    },
+    "iconLeft": {
+      "type": "boolean",
+      "required": false,
+      "description": "Indica si el select tiene iconos a la izquierda",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "required": false,
+      "description": "Estado del componente",
+      "enum": ["enabled", "disabled", "error"],
+      "default": "enabled"
+    },
+    "multiple": {
+      "type": "boolean",
+      "required": false,
+      "description": "Indica si permite selección múltiple",
+      "default": false
+    },
+    "filter": {
+      "type": "boolean",
+      "required": false,
+      "description": "Indica si permite filtrar opciones",
+      "default": false
+    }
+  },
+  "prompts": [
+    "select",
+    "dropdown",
+    "lista desplegable",
+    "seleccionar opción",
+    "menú desplegable",
+    "campo de selección",
+    "opciones",
+    "elegir",
+    "selección múltiple"
+  ],
+  "examples": [
+    {
+      "name": "Select básico",
+      "description": "Select simple con opciones",
+      "properties": {
+        "placeholder": "Selecciona una opción",
+        "values": [
+          {"text": "Opción 1", "value": "1"},
+          {"text": "Opción 2", "value": "2"}
+        ]
+      }
+    },
+    {
+      "name": "Select múltiple",
+      "description": "Select con selección múltiple",
+      "properties": {
+        "placeholder": "Selecciona opciones",
+        "multiple": true,
+        "values": [
+          {"text": "Opción A", "value": "a"},
+          {"text": "Opción B", "value": "b"}
+        ]
+      }
+    },
+    {
+      "name": "Select con iconos",
+      "description": "Select con iconos en las opciones",
+      "properties": {
+        "placeholder": "Selecciona con icono",
+        "iconLeft": true,
+        "values": [
+          {"text": "Cuenta Ahorros", "value": "savings", "icon": "savings"},
+          {"text": "Cuenta Corriente", "value": "checking", "icon": "checking"}
+        ]
+      }
+    }
+  ]
+} 

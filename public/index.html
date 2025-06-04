@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bancolombia RAG - Generador de Componentes</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-cube"></i>
+                    <h1>Bancolombia RAG</h1>
+                    <span class="version">v2.0</span>
+                </div>
+                <nav class="nav">
+                    <a href="#generator" class="nav-link active">Generador</a>
+                    <a href="#search" class="nav-link">Búsqueda</a>
+                    <a href="#components" class="nav-link">Componentes</a>
+                    <a href="#docs" class="nav-link">Documentación</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn-secondary" id="healthCheck">
+                        <i class="fas fa-heartbeat"></i>
+                        Estado
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Sistema Inteligente de Generación de Componentes</h2>
+                    <p>Genera componentes del Design System de Bancolombia usando inteligencia artificial y búsqueda semántica avanzada.</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">11</span>
+                            <span class="stat-label">Componentes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">93%</span>
+                            <span class="stat-label">Precisión</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">150ms</span>
+                            <span class="stat-label">Respuesta</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Generator Section -->
+            <section id="generator" class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-magic"></i> Generador de Componentes</h3>
+                    <p>Describe el componente que necesitas en lenguaje natural</p>
+                </div>
+                
+                <div class="generator-container">
+                    <div class="generator-input">
+                        <div class="input-group">
+                            <label for="promptInput">Describe tu componente:</label>
+                            <textarea 
+                                id="promptInput" 
+                                placeholder="Ejemplo: botón primario que diga 'Guardar' para un formulario de registro"
+                                rows="3"
+                            ></textarea>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="contextInput">Contexto adicional (opcional):</label>
+                            <input 
+                                type="text" 
+                                id="contextInput" 
+                                placeholder="Ejemplo: formulario de registro de usuario"
+                            >
+                        </div>
+
+                        <div class="options-grid">
+                            <div class="option-group">
+                                <label for="maxResults">Máximo resultados:</label>
+                                <select id="maxResults">
+                                    <option value="1">1</option>
+                                    <option value="3" selected>3</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            
+                            <div class="option-group">
+                                <label for="threshold">Umbral de confianza:</label>
+                                <select id="threshold">
+                                    <option value="0.6">60%</option>
+                                    <option value="0.7" selected>70%</option>
+                                    <option value="0.8">80%</option>
+                                    <option value="0.9">90%</option>
+                                </select>
+                            </div>
+                            
+                            <div class="option-group">
+                                <label for="format">Formato:</label>
+                                <select id="format">
+                                    <option value="html" selected>HTML</option>
+                                    <option value="angular">Angular</option>
+                                    <option value="react">React</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label class="checkbox">
+                                <input type="checkbox" id="includeCode" checked>
+                                <span class="checkmark"></span>
+                                Incluir código HTML
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="includeTypeScript" checked>
+                                <span class="checkmark"></span>
+                                Incluir código TypeScript
+                            </label>
+                        </div>
+
+                        <button class="btn-primary" id="generateBtn">
+                            <i class="fas fa-cogs"></i>
+                            Generar Componente
+                        </button>
+                    </div>
+
+                    <div class="generator-output" id="generatorOutput">
+                        <div class="output-placeholder">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>Los componentes generados aparecerán aquí</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search Section -->
+            <section id="search" class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-search"></i> Búsqueda Semántica</h3>
+                    <p>Encuentra componentes usando búsqueda inteligente</p>
+                </div>
+
+                <div class="search-container">
+                    <div class="search-input">
+                        <div class="input-group">
+                            <label for="searchQuery">Buscar componentes:</label>
+                            <input 
+                                type="text" 
+                                id="searchQuery" 
+                                placeholder="Ejemplo: botón de confirmación, alerta de error, campo de texto"
+                            >
+                        </div>
+
+                        <div class="search-filters">
+                            <div class="filter-group">
+                                <label for="categoryFilter">Categoría:</label>
+                                <select id="categoryFilter">
+                                    <option value="">Todas</option>
+                                    <option value="atoms">Átomos</option>
+                                    <option value="molecules">Moléculas</option>
+                                    <option value="organisms">Organismos</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label for="typeFilter">Tipo:</label>
+                                <select id="typeFilter">
+                                    <option value="">Todos</option>
+                                    <option value="component">Componente</option>
+                                    <option value="directive">Directiva</option>
+                                    <option value="service">Servicio</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button class="btn-primary" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                            Buscar
+                        </button>
+                    </div>
+
+                    <div class="search-results" id="searchResults">
+                        <div class="results-placeholder">
+                            <i class="fas fa-search"></i>
+                            <p>Los resultados de búsqueda aparecerán aquí</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Components Section -->
+            <section id="components" class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-th-large"></i> Componentes Disponibles</h3>
+                    <p>Explora todos los componentes del sistema</p>
+                </div>
+
+                <div class="components-grid" id="componentsGrid">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Cargando componentes...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Documentation Section -->
+            <section id="docs" class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-book"></i> Documentación de la API</h3>
+                    <p>Endpoints y ejemplos de uso</p>
+                </div>
+
+                <div class="docs-container">
+                    <div class="docs-nav">
+                        <a href="#endpoints" class="docs-link active">Endpoints</a>
+                        <a href="#examples" class="docs-link">Ejemplos</a>
+                        <a href="#schemas" class="docs-link">Esquemas</a>
+                    </div>
+
+                    <div class="docs-content" id="docsContent">
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Cargando documentación...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2024 Bancolombia. Sistema RAG de Generación de Componentes.</p>
+                    <p>Fase 2: Optimización y Escalabilidad</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Términos</a>
+                    <a href="#" class="footer-link">Privacidad</a>
+                    <a href="#" class="footer-link">Soporte</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-cogs fa-spin"></i>
+            <p>Procesando...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/docs.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,106 @@
+{
+  "name": "bc-tabs-group",
+  "description": "Componente de pestañas con los diseños de Bancolombia para organizar contenido",
+  "category": "molecules",
+  "type": "component",
+  "module": "BcTabsGroupModule",
+  "import": "@bancolombia/design-system-web/bc-tabs-group",
+  "service": null,
+  "properties": {
+    "componentId": {
+      "type": "string",
+      "required": true,
+      "description": "Identificador único del componente",
+      "default": "auto-generated"
+    },
+    "typeTheme": {
+      "type": "string",
+      "required": false,
+      "description": "Tema del componente",
+      "enum": ["light", "dark"],
+      "default": "light"
+    },
+    "orientation": {
+      "type": "string",
+      "required": false,
+      "description": "Orientación de las pestañas",
+      "enum": ["horizontal", "vertical"],
+      "default": "horizontal"
+    },
+    "selectedIndex": {
+      "type": "number",
+      "required": false,
+      "description": "Índice de la pestaña seleccionada inicialmente",
+      "default": 0
+    },
+    "tabs": {
+      "type": "array",
+      "required": true,
+      "description": "Array de pestañas",
+      "items": {
+        "label": "string",
+        "content": "string",
+        "icon": "string (opcional)"
+      }
+    },
+    "animation": {
+      "type": "boolean",
+      "required": false,
+      "description": "Habilita animaciones (deprecado)",
+      "default": false
+    },
+    "hiddenArrows": {
+      "type": "boolean",
+      "required": false,
+      "description": "Oculta flechas de navegación (deprecado)",
+      "default": false
+    }
+  },
+  "prompts": [
+    "pestañas",
+    "tabs",
+    "tabulador",
+    "navegación por pestañas",
+    "contenido tabulado",
+    "secciones",
+    "organizar contenido",
+    "tabs group"
+  ],
+  "examples": [
+    {
+      "name": "Tabs básicas",
+      "description": "Pestañas horizontales simples",
+      "properties": {
+        "orientation": "horizontal",
+        "tabs": [
+          {"label": "Pestaña 1", "content": "Contenido de la primera pestaña"},
+          {"label": "Pestaña 2", "content": "Contenido de la segunda pestaña"}
+        ]
+      }
+    },
+    {
+      "name": "Tabs verticales",
+      "description": "Pestañas con orientación vertical",
+      "properties": {
+        "orientation": "vertical",
+        "typeTheme": "dark",
+        "tabs": [
+          {"label": "Configuración", "content": "Panel de configuración"},
+          {"label": "Perfil", "content": "Información del perfil"}
+        ]
+      }
+    },
+    {
+      "name": "Tabs con iconos",
+      "description": "Pestañas con iconos y contenido",
+      "properties": {
+        "orientation": "horizontal",
+        "selectedIndex": 1,
+        "tabs": [
+          {"label": "Inicio", "content": "Página de inicio", "icon": "home"},
+          {"label": "Configuración", "content": "Panel de configuración", "icon": "settings"}
+        ]
+      }
+    }
+  ]
+} 

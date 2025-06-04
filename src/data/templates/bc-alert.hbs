@@ -1,0 +1,27 @@
+{{#if useService}}
+// Método TypeScript para mostrar alerta usando BcDialogService
+show{{capitalize type}}Alert(): void {
+  this.dialogService.open(BcAlertComponent, {
+    componentId: '{{componentId}}',
+    type: '{{type}}',
+    text: '{{text}}',
+    inline: {{inline}},
+    dismissible: {{dismissible}}
+    {{#if title}}, title: '{{title}}'{{/if}}
+    {{#if timeOut}}, timeOut: {{timeOut}}{{/if}}
+    {{#if links}}, links: {{json links}}{{/if}}
+  });
+}
+{{else}}
+<!-- Componente HTML directo -->
+<bc-alert 
+  componentId="{{componentId}}"
+  type="{{type}}"
+  text="{{text}}"
+  inline="{{inline}}"
+  dismissible="{{dismissible}}"
+  {{#if title}}title="{{title}}"{{/if}}
+  {{#if timeOut}}timeOut="{{timeOut}}"{{/if}}
+  {{#if closeHandler}}(onclose)="{{closeHandler}}()"{{/if}}>
+</bc-alert>
+{{/if}} 

@@ -1,0 +1,116 @@
+{
+  "name": "bc-accordion",
+  "description": "Componente de acordeón con los diseños de Bancolombia para mostrar/ocultar contenido",
+  "category": "molecules",
+  "type": "component",
+  "module": "BcAccordionModule",
+  "import": "@bancolombia/design-system-web/bc-accordion",
+  "service": null,
+  "properties": {
+    "componentId": {
+      "type": "string",
+      "required": true,
+      "description": "Identificador único del componente",
+      "default": "auto-generated"
+    },
+    "type": {
+      "type": "string",
+      "required": false,
+      "description": "Tipo de acordeón que define su estructura",
+      "enum": ["basic", "info", "advance", "column", "minimal", "minimal-unbordered"],
+      "default": "basic"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "Título principal del acordeón"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false,
+      "description": "Subtítulo del acordeón"
+    },
+    "content": {
+      "type": "string",
+      "required": true,
+      "description": "Contenido del acordeón"
+    },
+    "active": {
+      "type": "boolean",
+      "required": false,
+      "description": "Indica si el acordeón está expandido inicialmente",
+      "default": false
+    },
+    "disabled": {
+      "type": "boolean",
+      "required": false,
+      "description": "Indica si el acordeón está deshabilitado",
+      "default": false
+    },
+    "leftIcon": {
+      "type": "string",
+      "required": false,
+      "description": "Icono a la izquierda del título"
+    },
+    "titleIcon": {
+      "type": "string",
+      "required": false,
+      "description": "Icono al lado del título"
+    },
+    "subtitleIcon": {
+      "type": "string",
+      "required": false,
+      "description": "Icono al lado del subtítulo"
+    },
+    "single": {
+      "type": "boolean",
+      "required": false,
+      "description": "Si es true, solo un acordeón puede estar abierto a la vez",
+      "default": false
+    }
+  },
+  "prompts": [
+    "acordeón",
+    "accordion",
+    "expandir",
+    "colapsar",
+    "mostrar ocultar",
+    "desplegable",
+    "contenido expandible",
+    "sección colapsable",
+    "panel expandible"
+  ],
+  "examples": [
+    {
+      "name": "Acordeón básico",
+      "description": "Acordeón simple con título y contenido",
+      "properties": {
+        "type": "basic",
+        "title": "Información General",
+        "content": "Contenido del acordeón básico"
+      }
+    },
+    {
+      "name": "Acordeón avanzado",
+      "description": "Acordeón con subtítulo e iconos",
+      "properties": {
+        "type": "advance",
+        "title": "Configuración Avanzada",
+        "subtitle": "Opciones adicionales",
+        "leftIcon": "settings",
+        "titleIcon": "info",
+        "content": "Contenido del acordeón avanzado"
+      }
+    },
+    {
+      "name": "Acordeón activo",
+      "description": "Acordeón expandido por defecto",
+      "properties": {
+        "type": "basic",
+        "title": "Información Importante",
+        "content": "Este acordeón está abierto por defecto",
+        "active": true
+      }
+    }
+  ]
+} 

@@ -1,0 +1,11 @@
+<bc-input-select
+  componentId="{{componentId}}"
+  {{#if placeholder}}[placeholder]="'{{placeholder}}'"{{/if}}
+  {{#if textBelow}}[textBelow]="'{{textBelow}}'"{{/if}}
+  [values]="{{valuesArray}}"
+  {{#if iconLeft}}[iconLeft]="{{iconLeft}}"{{/if}}
+  {{#if status}}[status]="'{{status}}'"{{/if}}
+  {{#if multiple}}[multiple]="{{multiple}}"{{/if}}
+  {{#if filter}}[filter]="{{filter}}"{{/if}}
+  (valueOutput)="{{changeHandler}}($event)">
+</bc-input-select> 

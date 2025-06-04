@@ -1,0 +1,128 @@
+{
+  "name": "bc-alert",
+  "type": "component",
+  "category": "molecule",
+  "description": "Componente de alertas con los diseños de Bancolombia S.A. para mostrar información de manera flotante o fija",
+  "selector": "bc-alert",
+  "module": "BcAlertModule",
+  "import": "@bancolombia/design-system-web/bc-alert",
+  "service": "BcDialogService",
+  "properties": {
+    "componentId": {
+      "type": "string",
+      "required": true,
+      "description": "Identificador único del componente"
+    },
+    "type": {
+      "type": "string",
+      "required": true,
+      "options": ["error", "success", "info", "warning", "inactive"],
+      "description": "Tipo de alerta que define el estilo y el icono"
+    },
+    "text": {
+      "type": "string",
+      "required": true,
+      "description": "Texto principal de la alerta"
+    },
+    "title": {
+      "type": "string",
+      "required": false,
+      "description": "Título opcional de la alerta"
+    },
+    "inline": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "description": "Si es true, la alerta aparece insertada en el documento. Si es false, aparece como popup"
+    },
+    "dismissible": {
+      "type": "boolean",
+      "required": true,
+      "default": true,
+      "description": "Si la alerta se puede cerrar manualmente"
+    },
+    "fixed": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "description": "Si la alerta es fija en la parte superior de la ventana"
+    },
+    "timeOut": {
+      "type": "number",
+      "required": false,
+      "description": "Tiempo en milisegundos para cerrar automáticamente la alerta"
+    },
+    "links": {
+      "type": "array",
+      "required": false,
+      "description": "Array de enlaces para mostrar en la alerta (máximo 2)",
+      "items": {
+        "url": "string",
+        "text": "string"
+      }
+    }
+  },
+  "usage": {
+    "html": "<bc-alert componentId=\"{{componentId}}\" type=\"{{type}}\" text=\"{{text}}\" inline=\"{{inline}}\" dismissible=\"{{dismissible}}\" {{#if title}}title=\"{{title}}\"{{/if}} {{#if timeOut}}timeOut=\"{{timeOut}}\"{{/if}}></bc-alert>",
+    "typescript": "this.dialogService.open(BcAlertComponent, {\n  componentId: '{{componentId}}',\n  type: '{{type}}',\n  text: '{{text}}',\n  inline: {{inline}},\n  dismissible: {{dismissible}}\n  {{#if title}}, title: '{{title}}'{{/if}}\n  {{#if timeOut}}, timeOut: {{timeOut}}{{/if}}\n});"
+  },
+  "examples": [
+    {
+      "name": "Alerta de éxito",
+      "description": "Alerta para confirmar una operación exitosa",
+      "code": "<bc-alert componentId=\"success-alert\" type=\"success\" text=\"Operación realizada exitosamente\" inline=\"false\" dismissible=\"true\"></bc-alert>",
+      "props": {
+        "componentId": "success-alert",
+        "type": "success",
+        "text": "Operación realizada exitosamente",
+        "inline": false,
+        "dismissible": true
+      }
+    },
+    {
+      "name": "Alerta de error con título",
+      "description": "Alerta de error con título descriptivo",
+      "code": "<bc-alert componentId=\"error-alert\" type=\"error\" title=\"Error de validación\" text=\"Por favor verifica los datos ingresados\" inline=\"false\" dismissible=\"true\"></bc-alert>",
+      "props": {
+        "componentId": "error-alert",
+        "type": "error",
+        "title": "Error de validación",
+        "text": "Por favor verifica los datos ingresados",
+        "inline": false,
+        "dismissible": true
+      }
+    },
+    {
+      "name": "Alerta inline temporal",
+      "description": "Alerta que aparece en el documento y se cierra automáticamente",
+      "code": "<bc-alert componentId=\"temp-alert\" type=\"info\" text=\"Información guardada temporalmente\" inline=\"true\" dismissible=\"false\" timeOut=\"3000\"></bc-alert>",
+      "props": {
+        "componentId": "temp-alert",
+        "type": "info",
+        "text": "Información guardada temporalmente",
+        "inline": true,
+        "dismissible": false,
+        "timeOut": 3000
+      }
+    }
+  ],
+  "prompts": [
+    "alerta de éxito",
+    "alerta de error",
+    "alerta de información",
+    "alerta de advertencia",
+    "mensaje de confirmación",
+    "notificación de error",
+    "popup de éxito",
+    "alerta temporal",
+    "alerta que se cierre automáticamente",
+    "mensaje inline"
+  ],
+  "interactions": [
+    {
+      "event": "onclose",
+      "description": "Evento que se ejecuta cuando la alerta se cierra",
+      "handler": "(onclose)=\"{{closeHandler}}()\""
+    }
+  ]
+} 
